@@ -57,7 +57,7 @@ IRAM_ATTR void encoderPushButton()
 float getEncoderPercentage()
 {
     const int encoderFullScale = 100;
-    int position = g_encoder.read();
+    int position = g_encoder.read() / 4; // divided by 4 to match EC11 encoder
     float positionPercentage;
     if (position < 0)
     {
