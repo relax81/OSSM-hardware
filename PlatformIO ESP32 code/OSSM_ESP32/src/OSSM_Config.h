@@ -6,7 +6,7 @@
         Motion System Config
 */
 //Top linear speed of the device.
-const float maxSpeedMmPerSecond = 900.0f;
+const float maxSpeedMmPerSecond = 400.0f;
 //This should match the step/rev of your stepper or servo.
 //N.b. the iHSV57 has a table on the side for setting the DIP switches to your preference.
 const float motorStepPerRevolution = 800.0f;
@@ -19,7 +19,7 @@ const float beltPitchMm = 2.0f;
 // The absolute max your OSSM would have is the distance between the belt attachments subtract
 // the linear block holder length (75mm on OSSM)
 // Recommended to also subtract e.g. 20mm to keep the backstop well away from the device.
-const float maxStrokeLengthMm = 75.f;
+const float maxStrokeLengthMm = 95.0f;
 /*
         Web Config
 */

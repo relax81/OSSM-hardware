@@ -1,3 +1,4 @@
+
 #include <Arduino.h>          // Basic Needs
 #include <ArduinoJson.h>      // Needed for the Bubble APP
 #include <ESP_FlexyStepper.h> // Current Motion Control
@@ -192,6 +193,9 @@ void setup()
     pinMode(SPEED_POT_PIN, INPUT);
     adcAttachPin(SPEED_POT_PIN);
 
+    // Pullup for Limit / Endstop Switch
+    pinMode(LIMIT_SWITCH_PIN, INPUT_PULLUP);
+
     analogReadResolution(12);
     analogSetAttenuation(ADC_11db); // allows us to read almost full 3.3V range
 
@@ -226,10 +230,11 @@ void setup()
         LogDebug("OSSM will now home");
         g_ui.UpdateMessage("Finding Home");
         stepper.setSpeedInMillimetersPerSecond(25);
+        delay(1000);
         stepper.moveToHomeInMillimeters(1, 25, 300, LIMIT_SWITCH_PIN);
         LogDebug("OSSM has homed, will now move out to max length");
         g_ui.UpdateMessage("Moving to Max");
-        stepper.setSpeedInMillimetersPerSecond(7);
+        stepper.setSpeedInMillimetersPerSecond(25);
         stepper.moveToPositionInMillimeters((-1 * maxStrokeLengthMm) - strokeZeroOffsetmm);
         LogDebug("OSSM has moved out, will now set new home?");
         stepper.setCurrentPositionAsHomeAndStop();
