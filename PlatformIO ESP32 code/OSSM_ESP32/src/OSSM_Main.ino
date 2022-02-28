@@ -1,3 +1,4 @@
+
 #include <Arduino.h>          // Basic Needs
 #include <ArduinoJson.h>      // Needed for the Bubble APP
 #include <ESP_FlexyStepper.h> // Current Motion Control
@@ -78,6 +79,7 @@ void setup()
     ossm.startLeds();
     Serial.begin(115200);
     LogDebug("\n Starting");
+    delay(200);
     pinMode(ENCODER_SWITCH, INPUT_PULLDOWN); // Rotary Encoder Pushbutton
     attachInterrupt(digitalPinToInterrupt(ENCODER_SWITCH), encoderPushButton, RISING);
 

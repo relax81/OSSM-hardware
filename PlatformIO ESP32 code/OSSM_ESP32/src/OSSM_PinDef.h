@@ -23,7 +23,7 @@
 #define STOP_PIN 19
 // define the IO pin where the limit(homing) switch(es) are connected to (switches in
 // series in normally open setup) Switches wired from IO pin to ground.
-#define LIMIT_SWITCH_PIN 12
+#define LIMIT_SWITCH_PIN 13 // changed from pin 12 to 13 because 12 doesn't support pullup on boot
 
 /*
         Wifi Control Pins

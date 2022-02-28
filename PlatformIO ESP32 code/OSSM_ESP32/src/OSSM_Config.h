@@ -28,6 +28,7 @@ extern volatile long lastEncoderButtonPressMillis;
 /*
         Motion System Config
 */
+const float hardcode_motorStepPerRevolution = 400.0f;
 // Top linear speed of the device.
 const float hardcode_maxSpeedMmPerSecond = 900.0f;
 // This should match the step/rev of your stepper or servo.
@@ -35,6 +36,9 @@ const float hardcode_maxSpeedMmPerSecond = 900.0f;
 const float hardcode_motorStepPerRevolution = 800.0f;
 // Number of teeth the pulley that is attached to the servo/stepper shaft has.
 const float hardcode_pulleyToothCount = 20.0f;
+const float maxSpeedMmPerSecond = 400.0f;
+const float motorStepPerRevolution = 800.0f;
+const float pulleyToothCount = 20.0f;
 // Set to your belt pitch (Distance between two teeth on the belt) (E.g. GT2 belt has 2mm tooth pitch)
 const float hardcode_beltPitchMm = 2.0f;
 // This is in millimeters, and is what's used to define how much of
@@ -43,6 +47,7 @@ const float hardcode_beltPitchMm = 2.0f;
 // the linear block holder length (75mm on OSSM)
 // Recommended to also subtract e.g. 20mm to keep the backstop well away from the device.
 const float hardcode_maxStrokeLengthMm = 75.f;
+const float maxStrokeLengthMm = 95.0f;
 /*
         Web Config
 */
