@@ -58,7 +58,7 @@ IRAM_ATTR void encoderPushButton()
 float getEncoderPercentage()
 {
     const int encoderFullScale = 100;
-    int position = g_encoder.read() / 4; // divided by 4 to match EC11 encoder
+    int position = g_encoder.read() / 2; // divided by 2 to get 2 steps per turn with EC11
     float positionPercentage;
     if (position < 0)
     {
@@ -179,7 +179,8 @@ void setup()
     pinMode(MOTOR_ENABLE_PIN, OUTPUT);
     pinMode(WIFI_RESET_PIN, INPUT_PULLDOWN);
     pinMode(WIFI_CONTROL_TOGGLE_PIN, LOCAL_CONTROLLER); // choose between WIFI_CONTROLLER and LOCAL_CONTROLLER
-    // test
+
+
 
     // set the pin for the emegrency switch to input with inernal pullup
     // the emergency switch is connected in a Active Low configuraiton in this

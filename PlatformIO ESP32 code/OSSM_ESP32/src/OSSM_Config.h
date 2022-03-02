@@ -27,7 +27,7 @@ const float maxStrokeLengthMm = 95.0f;
 // web portal to interact with your OSSM.
 // there is NO security other than knowing this name, make this unique to avoid
 // collisions with other users
-const char *ossmId = "OSSM1";
+const char *ossmId = "OSSM81";
 
 /*
         Advanced Config
