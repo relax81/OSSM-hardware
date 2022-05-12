@@ -1,3 +1,23 @@
+#ifndef OSSM_CONFIG_H
+#define OSSM_CONFIG_H
+
+
+#define DEBUG
+
+#ifdef DEBUG
+#define LogDebug(...) Serial.println(__VA_ARGS__)
+#define LogDebugFormatted(...) Serial.printf(__VA_ARGS__)
+#else
+#define LogDebug(...) ((void)0)
+#define LogDebugFormatted(...) ((void)0)
+#endif
+
+#define SW_VERSION "0.2"
+#define EEPROM_SIZE 200
+
+
+
+
 /*
     User Config for OSSM - Reference board users should tweak this to match their personal build.
 */
@@ -13,7 +33,7 @@ const float motorStepPerRevolution = 800.0f;
 //Number of teeth the pulley that is attached to the servo/stepper shaft has.
 const float pulleyToothCount = 20.0f;
 // Set to your belt pitch (Distance between two teeth on the belt) (E.g. GT2 belt has 2mm tooth pitch)
-const float beltPitchMm = 2.0f;
+const float hardcode_beltPitchMm = 2.0f;
 // This is in millimeters, and is what's used to define how much of
 // your rail is usable.
 // The absolute max your OSSM would have is the distance between the belt attachments subtract
@@ -34,15 +54,11 @@ const char *ossmId = "OSSM81";
 */
 // After homing this is the physical buffer distance from the effective zero to the home switch
 // This is to stop the home switch being smacked constantly
-const float strokeZeroOffsetmm = 6.0f;
+const float hardcode_strokeZeroOffsetmm = 6.0f;
 // The minimum value of the pot in percent
 // prevents noisy pots registering commands when turned down to zero by user
 const float commandDeadzonePercentage = 1.0f;
 // affects acceleration in stepper trajectory (Aggressiveness of motion)
-const float accelerationScaling = 100.0f;
+const float hardcode_accelerationScaling = 100.0f;
 
-
-
-
-
-
+#endif

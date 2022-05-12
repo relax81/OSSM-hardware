@@ -18,6 +18,9 @@ There are a few hardware flavours to choose from, we've included user modified v
 Join our Discord to be part of the discussion and get help with your build. https://discord.gg/MmpT9xE
 
 ### Software
+
+The software is available in this github repository, the software is written and compiled utilizing PlatformIO on Visual Studio Code. <a href="OSSM PlatformIO Readme.md">Reference for working with the code in PlatformIO here</a>
+
 We recommend using the ESP32 microcontroller. This code is still arduino IDE compatible but offers many times better performance and a nice internet dashboard you can use!
 Control your OSSM at https://app.researchanddesire.com/ossm !
 
@@ -47,16 +50,17 @@ While using the OSSM we can suggest the following heiracrhy of safety, however i
 
 We are calling this the reference build, when deviating from it please check compatability with existing BOM
 
-1) **[3D Printed Parts](https://github.com/KinkyMakers/OSSM-hardware/tree/master/Hardware/Current%20OSSM)**
+1) **[3D Printed Parts](Hardware/OSSM%20Printed%20Parts)**
    - This has recently had significant changes
-   - [Make sure to choose one of the options for the toy adapters](https://github.com/KinkyMakers/OSSM-hardware/tree/master/Hardware/Current%20OSSM/end%20effector%20options)
+   - [Make sure to choose one of the options for the toy adapters](Hardware/OSSM%20Printed%20Parts/end%20effector%20options)
    - Mounting options are still something that need to be worked on
    - Thank you @Elims for the [belt tensioner design](https://media.discordapp.net/attachments/756320102919700607/858110808281317396/unknown.png) ( https://github.com/theelims/FuckIO )
 2) ** IHSV57 NEMA23 Servo with 8mm shaft** : [Amazon.ca](https://www.amazon.ca/Integrated-Servo-Motor-IHSV57-30-10-3000rpm/dp/B081CVJHC7) | [JMC](https://www.jmc-motor.com/product/953.html)
    - *Avoid the StepperOnline version until we can further test*
-   - Make sure you get something with 8mm shaft max!
-   - search around for the best deal for you - reccommend searching "ihsv57" on Aliexpress and choosing the -10 -14 or -18
+   - Make sure you get something with **8mm** shaft.
    - There are *3* sizes of this motor.  100W = iHSV57-30-**10**, 140W = iHSV57-30-**14**, 180W = iHSV57-30-**18** 
+   - Search around for the best deal for you - reccommend searching "ihsv57" on Aliexpress.com and choosing the -10 -14 or -18
+   - For details on picking the right motor for your use case - check this [FAQ](https://github.com/KinkyMakers/OSSM-hardware/blob/master/FAQ.md#q--what-strength-of--motor-do-i-need)
    - If you are using the 140W or180W version it is recommended to use a 10mm wide belt and pulley (see the next two items)
 3) **GT2 Pulley 8mm Bore 20 Tooth** : [Amazon.ca](https://www.amazon.ca/Saiper-Timing-Aluminum-Synchronous-Printer/dp/B07MDH63GX/ref=sr_1_5?dchild=1&keywords=8mm+bore+gt2&qid=1627821975&sr=8-5)
 4) **GT2 Timing Belt** : [Amazon.ca](https://www.amazon.ca/Printer-Timing-Teeth-Pulley-Wrench/dp/B08PKPK4D8/ref=sr_1_8?dchild=1&keywords=gt2+timing+belt&qid=1627821669&sr=8-8)
@@ -65,11 +69,13 @@ We are calling this the reference build, when deviating from it please check com
 5) **Bearings** 5x11x4mm : [Amazon.ca](https://www.amazon.ca/gp/product/B07CVBW44R/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 6) **MGN12H Rail and bearing** : [Amazon.ca](https://www.amazon.ca/Usongshine-guidage-lin%C3%A9aire-MGN12H-300mm/dp/B07XLL484J/ref=pd_sbs_201_1/139-0384147-0570541?_encoding=UTF8&pd_rd_i=B07XT8ZY9H&pd_rd_r=e7dc0ab7-e244-4a6c-ba42-59d7da76e03b&pd_rd_w=jhRlq&pd_rd_wg=zovAp&pf_rd_p=0ec96c83-1800-4e36-8486-44f5573a2612&pf_rd_r=YZGA61RD95B0E3H004ZA&refRID=YZGA61RD95B0E3H004ZA&th=1)
    - Minimum 250mm in length
+   - Rail length = desired stroke + 180mm
    - Must be MGN12**H** rail
 7) **Power Supply** : [Amazon.ca](https://www.amazon.ca/LEDENET-Adapter-Flexible-Lighting-5-52-5mm/dp/B078N5DC2J/ref=sr_1_9?keywords=24v+4a&qid=1636728925&sr=8-9)
-   - Larger motors generally need more power. For the large 180W servo a 36V 5A supply would be ideal.
-   - 140W -> 24V 6A or 36V 4A
-   - 100W -> 24V 4A or 36V 3A
+   - Larger motors generally need more power. 
+   - 180W -> 24V 6A
+   - 140W -> 24V 6A
+   - 100W -> 24V 4A
    - Choose the closest supply to the guidelines, **the ossm will still work**, but may be limited at maximum thrust force.
    - Ensure the power supply is fully enclosed (like a laptop power supply)
    - Ensure the power supply has the correct approvals for your location
@@ -112,8 +118,7 @@ This should be a good start for the wiring of your OSSM! However, depending on y
 
 ### OSSM PCB w/ TB6600 Stepper Driver
 
-![image](https://user-images.githubusercontent.com/43324815/150360206-af9415c0-5eb6-42bb-a5fc-49bc39058e9d.png)
-
+<img width="1028" alt="image" src="https://user-images.githubusercontent.com/43324815/159145946-a9960bba-c9bc-4717-b3b4-5b5c34b4a3d2.png">
 
 ### Servo Wiring
 
