@@ -18,7 +18,7 @@ volatile bool g_has_not_homed = true;
 bool REMOTE_ATTACHED = false;
 
 // OSSM name setup
-const char *ossmId = "OSSM1";
+const char *ossmId = "OSSM_yourID";
 
 // create the OSSM hardware object
 

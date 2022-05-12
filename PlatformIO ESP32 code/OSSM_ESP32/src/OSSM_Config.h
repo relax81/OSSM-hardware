@@ -26,12 +26,12 @@
         Motion System Config
 */
 //Top linear speed of the device.
-const float maxSpeedMmPerSecond = 400.0f;
+const float hardcode_maxSpeedMmPerSecond = 400.0f;
 //This should match the step/rev of your stepper or servo.
 //N.b. the iHSV57 has a table on the side for setting the DIP switches to your preference.
-const float motorStepPerRevolution = 800.0f;
+const float hardcode_motorStepPerRevolution = 800.0f;
 //Number of teeth the pulley that is attached to the servo/stepper shaft has.
-const float pulleyToothCount = 20.0f;
+const float hardcode_pulleyToothCount = 20.0f;
 // Set to your belt pitch (Distance between two teeth on the belt) (E.g. GT2 belt has 2mm tooth pitch)
 const float hardcode_beltPitchMm = 2.0f;
 // This is in millimeters, and is what's used to define how much of
@@ -39,7 +39,7 @@ const float hardcode_beltPitchMm = 2.0f;
 // The absolute max your OSSM would have is the distance between the belt attachments subtract
 // the linear block holder length (75mm on OSSM)
 // Recommended to also subtract e.g. 20mm to keep the backstop well away from the device.
-const float maxStrokeLengthMm = 95.0f;
+const float hardcode_maxStrokeLengthMm = 95.0f;
 /*
         Web Config
 */
@@ -47,7 +47,7 @@ const float maxStrokeLengthMm = 95.0f;
 // web portal to interact with your OSSM.
 // there is NO security other than knowing this name, make this unique to avoid
 // collisions with other users
-const char *ossmId = "OSSM81";
+extern const char *ossmId;
 
 /*
         Advanced Config
