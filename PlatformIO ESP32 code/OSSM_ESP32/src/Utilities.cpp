@@ -337,7 +337,7 @@ float OSSM::getVoltageReading(int samples) {}
 float OSSM::getEncoderPercentage()
 {
     const int encoderFullScale = 100;
-    int position = g_encoder.read();
+    int position = g_encoder.read() / 2; // divided by 2 to get 2 steps per turn with EC11
     float outputPositionPercentage;
     if (position < 0)
     {
