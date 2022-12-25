@@ -243,7 +243,7 @@ void OSSM::setRunMode()
     int encoderVal;
     while (initialEncoderFlag == encoderButtonPresses)
     {
-        encoderVal = abs(g_encoder.read());
+        encoderVal = abs(g_encoder.read() / 2);
         runModeVal = (encoderVal % (2 * runModeCount)) / 2; // scale by 2 because encoder counts by 2
         Serial.print("encoder: ");
         Serial.println(encoderVal);

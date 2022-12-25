@@ -83,6 +83,9 @@ void setup()
     pinMode(ENCODER_SWITCH, INPUT_PULLDOWN); // Rotary Encoder Pushbutton
     attachInterrupt(digitalPinToInterrupt(ENCODER_SWITCH), encoderPushButton, RISING);
 
+    // Pullup for Limit / Endstop Switch
+    pinMode(LIMIT_SWITCH_PIN, INPUT_PULLUP);
+
     ossm.setup();
 
     // start the WiFi connection task so we can be doing something while homing!

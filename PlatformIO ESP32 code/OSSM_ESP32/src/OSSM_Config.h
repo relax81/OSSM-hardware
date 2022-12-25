@@ -13,7 +13,7 @@
 #endif
 
 #define SW_VERSION "0.23"
-#define HW_VERSION 22 //divide by 10 for real hw version
+#define HW_VERSION 19 //divide by 10 for real hw version
 #define EEPROM_SIZE 200
 
 //#define INITIAL_SETUP //should only be defined at initial burn to configure HW version
@@ -28,7 +28,13 @@ extern volatile long lastEncoderButtonPressMillis;
 /*
         Motion System Config
 */
+// Top linear speed of the device.
 const float hardcode_maxSpeedMmPerSecond = 400.0f;
+// This should match the step/rev of your stepper or servo.
+// N.b. the iHSV57 has a table on the side for setting the DIP switches to your preference.
+const float hardcode_motorStepPerRevolution = 800.0f;
+// Number of teeth the pulley that is attached to the servo/stepper shaft has.
+const float hardcode_pulleyToothCount = 20.0f;
 // Set to your belt pitch (Distance between two teeth on the belt) (E.g. GT2 belt has 2mm tooth pitch)
 const float hardcode_beltPitchMm = 2.0f;
 // This is in millimeters, and is what's used to define how much of
